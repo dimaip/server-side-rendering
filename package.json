@@ -2,13 +2,14 @@
   "name": "server-side-rendering",
   "version": "0.0.1",
   "description": "The missing guide to server-side rendering",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack && babel-node server.js"
   },
   "author": "Dmitri Pisarev",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.13.4",
     "path": "^0.12.7",
     "react": "^0.14.8",
     "react-dom": "^0.14.8"

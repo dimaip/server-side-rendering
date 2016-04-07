@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const config = {
-  entry: ['index.js'],
+  entry: ['client.js'],
   output: {
     path: path.join(__dirname, 'built/'),
     filename: 'index.js',
