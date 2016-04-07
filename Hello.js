@@ -1,8 +1,11 @@
 import React from 'react';
+if (process.env.BROWSER) {
+    require('Hello.css');
+}
 
 const Hello = React.createClass({
   render: function() {
-    return <div>Hello {this.props.name}</div>;
+    return <div className="Hello">Hello {this.props.name}</div>;
   }
 });
 
