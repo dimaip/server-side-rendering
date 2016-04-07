@@ -1,22 +1,6 @@
 import express from 'express';
-import fs from 'fs';
 import path from 'path';
-import React from 'react';
-import ReactDOMServer from 'react-dom/server';
-import Hello from './Hello.js';
-
-function handleRender(req, res) {
-    const html = ReactDOMServer.renderToString(
-        <Hello name="World" />
-    );
-    fs.readFile('./index.html', 'utf8', function (err, file) {
-        if (err) {
-        return console.log(err);
-        }
-        const document = file.replace(/<div id="app"><\/div>/, `<div id="app">${html}</div>`);
-        res.send(document);
-    });
-}
+import handleRender from './built/server.js';
 
 const app = express();
 // Serve built files with express static files middleware
