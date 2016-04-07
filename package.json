@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
+    "isomorphic-fetch": "^2.2.1",
     "path": "^0.12.7",
     "react": "^0.14.8",
     "react-dom": "^0.14.8"
