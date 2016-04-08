@@ -1,21 +1,23 @@
 import React from 'react';
-import s from 'Hello.scss';
+import Transmit from 'react-transmit';
 import fetch from 'isomorphic-fetch';
+import s from 'Hello.scss';
 
 const Hello = React.createClass({
-  getInitialState: function() {
-    return {
-      hello: ''
-    };
-  },
-  componentDidMount: function() {
-    fetch('/static/data.json')
-      .then(r => r.json())
-      .then(r => this.setState({hello: r.hello}));
-  },
   render: function() {
-    return <div className={s.root}>Hello {this.props.name}. Async hello {this.state.hello}</div>;
+    return <div className={s.root}>Hello {this.props.name}. Async hello {this.props.hello}</div>;
   }
 });
 
-export default Hello;
+export default Transmit.createContainer(Hello, {
+  // These must be set, or else it would fail to render
+  initialVariables: {},
+  // each fragmen will be resolved into a prop
+  fragments: {
+    hello () {
+      return fetch('http://localhost:3000/static/data.json')
+        .then(r => r.json())
+        .then(r => r.hello);
+    }
+  }
+});

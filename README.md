@@ -7,7 +7,7 @@ Follow the tutorial commit-by-commit, to see the server-side rendering drama unf
 
 ## Contents (mostly for Google)
 
-### Step 1: minimal Webpack, Babel and React setup
+### [Step 1: minimal Webpack, Babel and React setup](https://github.com/dimaip/server-side-rendering/commit/7d1d0677bca0ea94e820dc7e156c89e83ef823bb)
 
 RUN: `npm run start` and then open index.html in the browser.
 
@@ -15,7 +15,7 @@ Webpack helps us to bundle our code with dependencies from npm
 (such as React), and then transforms the code with Babel, to make
 it compatible with ES5.
 
-### Step 2: trivial server-side rendering with Express
+### [Step 2: trivial server-side rendering with Express](https://github.com/dimaip/server-side-rendering/commit/fad6b64e4ec3ee6b378c6ab0abd36f03fdba7c77)
 
 RUN: `npm run start` and go to `http://localhost:3000`.
 
@@ -25,7 +25,7 @@ server the client with rendered html, and with webpack we continue to
 bundle client.js into ES5 code that the browser would understand,
 just as we did at previous step.
 
-### Step 3: Add styles
+### [Step 3: add styles](https://github.com/dimaip/server-side-rendering/commit/53d2ffa7bc9319722addced5bb94c5b231726a1b)
 
 Now lets learn to deal with styles. We configure webpack loaders to
 support loading CSS files. This is cool, but there comes one problem
@@ -36,7 +36,7 @@ Let's fix this problem with webpack's ExtractTextPlugin plugin: it
 extracts all CSS styles into one CSS file that we can serve to our client,
 so our page will instantly look perfectly styled, even without JS.
 
-### Step 3a: switch to CSS modules
+### [Step 3a: switch to CSS modules](https://github.com/dimaip/server-side-rendering/commit/e2c02444b1e7c6ec349511aa9b2da1a52aba5474)
 
 Everybody loves CSS modules, and the great news is that they come free with Webpack.
 The bad news is that we can't use them with server-side rendering, as we don't use
@@ -46,7 +46,7 @@ So at this step we broke everything, and the only way to continue from here, is 
 start using Webpack to pre-build code for server-side rendering too, and that's
 what we'll do at the next step.
 
-### Step 3b: save the day by making webpack to render server-side code
+### [Step 3b: save the day by making webpack to render server-side code](https://github.com/dimaip/server-side-rendering/commit/6e36b9690816d414ca36775c6487e0b6dbd8abe3)
 
 To save our issue with CSS modules, we make Webpack to render both
 our client and our server side code. The best way to do it is to
@@ -64,7 +64,7 @@ Great! Now our build is fixed, so we can use CSS modules both during client
 and server rendering.
 
 
-### Step 4a: asyncronously fetching data
+### [Step 4a: asyncronously fetching data](https://github.com/dimaip/server-side-rendering/commit/d9ce281b88d142cf52861223a201de6d47dfd428)
 
 Now let's fetch some data asyncronously. We'll use isomorphic-fetch,
 as it works both on client and server our of the box.
@@ -76,7 +76,7 @@ async data when it arrives.
 Let's try to fix it in the next step.
 
 
-### Step 4b: use react-transmit to declaratively define data deps
+### [Step 4b: use react-transmit to declaratively define data deps](https://github.com/dimaip/server-side-rendering/commit/d16840dab35c4ed140368de480e4b994fde6b448)
 
 There are multiple ways to solve async rendering issue. Here we'll
 use react-transmit to declaratively define our data dependencies per component,
