@@ -12,7 +12,7 @@ const Hello = React.createClass({
 export default Transmit.createContainer(Hello, {
   // These must be set, or else it would fail to render
   initialVariables: {},
-  // each fragmen will be resolved into a prop
+  // each fragment will be resolved into a prop
   fragments: {
     hello () {
       return fetch('http://localhost:3000/static/data.json')
